@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | Employee Management</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 500px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .address-group {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: #2575fc;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #1a5ed9;
+    }
+
+    .add-address-btn {
+      display: block;
+      margin-bottom: 20px;
+      background-color: #6a11cb;
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .add-address-btn:hover {
+      background-color: #5311a9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <form method="POST">
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Joining Date</label>
+      <input type="date" name="joining_date" required>
+
+      <label>Username</label>
+      <input type="text" name="username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <label>Address</label>
+      <div id="address-container">
+        <div class="address-group">
+          <input type="text" name="address" placeholder="Address Line" required>
+        </div>
+      </div>
+      <button type="button" class="add-address-btn" onclick="addAddress()">+ Add More Address</button>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function addAddress() {
+      const container = document.getElementById('address-container');
+      const div = document.createElement('div');
+      div.classList.add('address-group');
+      div.innerHTML = `<input type="text" name="address" placeholder="Address Line" required>`;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
